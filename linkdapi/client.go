@@ -1,19 +1,3 @@
-// Package linkdapi provides a Go SDK for the LinkdAPI service.
-//
-// LinkdAPI is the most advanced unofficial LinkedIn API that connects
-// directly to LinkedIn's endpoints for reliable, scalable data access.
-//
-// Basic usage:
-//
-//	client := linkdapi.NewClient("your_api_key")
-//	defer client.Close()
-//
-//	profile, err := client.GetProfileOverview("ryanroslansky")
-//	if err != nil {
-//	    log.Fatal(err)
-//	}
-//
-// For more examples, see the examples directory.
 package linkdapi
 
 import (

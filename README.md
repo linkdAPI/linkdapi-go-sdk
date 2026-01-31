@@ -3,7 +3,7 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/linkdapi/linkdapi-go-sdk.svg)](https://pkg.go.dev/github.com/linkdapi/linkdapi-go-sdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A lightweight Go SDK for [LinkdAPI](https://linkdapi.com) — the most advanced **unofficial LinkedIn API** you'll ever find. Instead of relying on brittle scrapers or search engine hacks, **LinkdAPI** connects straight to LinkedIn's own mobile and web endpoints. That means you get access to real-time data with unmatched **reliability**, **stability**, and **scalability** — perfect for developers, analysts, and anyone building tools that tap into LinkedIn at scale.
+A lightweight Python wrapper for [LinkdAPI](https://linkdapi.com) — the most advanced API for accessing professional profile and company data. With unmatched **reliability**, **stability**, and **scalability**, it’s perfect for developers, analysts, and anyone building tools that work with professional networking data at scale.
 
 ---
 
@@ -68,7 +68,7 @@ func main() {
     fmt.Printf("Profile: %+v\n", profile)
 
     // Get company information
-    company, err := client.GetCompanyInfo("", "linkedin")
+    company, err := client.GetCompanyInfo("", "google")
     if err != nil {
         log.Fatal(err)
     }
@@ -146,7 +146,7 @@ func main() {
     defer client.Close()
 
     // First, get the company ID from name
-    company, err := client.GetCompanyInfo("", "linkedin")
+    company, err := client.GetCompanyInfo("", "google")
     if err != nil {
         log.Fatal(err)
     }
@@ -537,7 +537,7 @@ func main() {
     client := linkdapi.NewClient("your_api_key")
     defer client.Close()
 
-    companyName := "linkedin"
+    companyName := "google"
 
     fmt.Printf("=== Company Intelligence for %s ===\n\n", companyName)
 
@@ -791,8 +791,6 @@ func main() {
 
 **MIT License** – Free to use for personal and commercial projects.
 
-⚠️ **Important:** This SDK is intended for **research and educational purposes**. Always respect LinkedIn's Terms of Service and rate limits. Use responsibly and ethically.
-
 ---
 
 ## 🌟 Support the Project
@@ -807,7 +805,7 @@ If you find LinkdAPI useful, consider:
 
 <div align="center">
 
-**Built with ❤️ for developers who need reliable LinkedIn data**
+**Built with ❤️ for developers who need reliable access to professional data**
 
 [Website](https://linkdapi.com) • [Documentation](https://linkdapi.com/docs) • [Twitter](https://x.com/l1nkdapi) • [Support](https://linkdapi.com/help-center)
 

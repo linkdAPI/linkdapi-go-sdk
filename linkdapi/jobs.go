@@ -84,3 +84,12 @@ func (c *Client) SearchJobsV2(searchParams JobSearchV2Params) (map[string]any, e
 
 	return c.sendRequest("GET", "api/v1/search/jobs", params)
 }
+
+// GetHiringTeam gets the hiring team for a given job by job ID.
+//
+// Documentation: https://linkdapi.com/docs?endpoint=/api/v1/jobs/job/hiring-team
+func (c *Client) GetHiringTeam(jobID string, start int) (map[string]any, error) {
+	params := map[string]string{"jobId": jobID}
+	intParam(params, "start", start)
+	return c.sendRequest("GET", "api/v1/jobs/job/hiring-team", params)
+}

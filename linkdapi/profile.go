@@ -139,3 +139,13 @@ func (c *Client) GetProfileURN(username string) (map[string]any, error) {
 	params := map[string]string{"username": username}
 	return c.sendRequest("GET", "api/v1/profile/username-to-urn", params)
 }
+
+// GetProfilePostedJobs gets all jobs posted by a profile using its URN.
+//
+// Documentation: https://linkdapi.com/docs?endpoint=/api/v1/jobs/posted-by-profile
+func (c *Client) GetProfilePostedJobs(profileUrn string, start, count int) (map[string]any, error) {
+	params := map[string]string{"profileUrn": profileUrn}
+	intParam(params, "start", start)
+	intParam(params, "count", count)
+	return c.sendRequest("GET", "api/v1/jobs/posted-by-profile", params)
+}

@@ -64,6 +64,9 @@ func (c *Client) SearchJobsV2(searchParams JobSearchV2Params) (map[string]any, e
 
 	stringParam(params, "keyword", searchParams.Keyword)
 	intParam(params, "start", searchParams.Start)
+	if searchParams.Count > 0 {
+		intParam(params, "count", searchParams.Count)
+	}
 	stringParam(params, "sortBy", searchParams.SortBy)
 	stringParam(params, "datePosted", searchParams.DatePosted)
 	sliceParam(params, "experience", searchParams.Experience)

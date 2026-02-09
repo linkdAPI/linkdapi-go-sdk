@@ -19,6 +19,7 @@ type JobSearchParams struct {
 type JobSearchV2Params struct {
 	Keyword            string   // Search keyword
 	Start              int      // Pagination offset (default: 0, increment by 25)
+	Count              int      // Number of results per page (default: 25, max: 50)
 	SortBy             string   // Sort by "relevance" (default) or "date_posted"
 	DatePosted         string   // Filter by "24h", "1week", or "1month"
 	Experience         []string // Experience levels (internship, entry_level, associate, mid_senior, director, executive)
@@ -40,8 +41,9 @@ type JobSearchV2Params struct {
 
 // PeopleSearchParams holds parameters for people search.
 type PeopleSearchParams struct {
-	Keyword         string   // Search keyword (e.g., "software engineer")
+	Keyword         string   // Search keyword (e.g., "software engineer") - optional
 	Start           int      // Pagination start index (default is 0)
+	Count           int      // Number of results per page (default: 20, max: 50)
 	CurrentCompany  []string // Current company IDs
 	FirstName       string   // First name filter
 	GeoURN          []string // Geographic URNs
@@ -58,6 +60,7 @@ type PeopleSearchParams struct {
 type CompanySearchParams struct {
 	Keyword     string   // Search keyword (e.g., "software")
 	Start       int      // Pagination start index (default is 0)
+	Count       int      // Number of results per page (default: 25, max: 50)
 	GeoURN      []string // Geographic URNs
 	CompanySize []string // Company sizes (e.g., "1-10", "11-50", "51-200")
 	HasJobs     *bool    // Filter companies with job listings
@@ -68,6 +71,7 @@ type CompanySearchParams struct {
 type ServiceSearchParams struct {
 	Keyword         string   // Search keyword (e.g., "software")
 	Start           int      // Pagination start index (default is 0)
+	Count           int      // Number of results per page (default: 25, max: 50)
 	GeoURN          []string // Geographic URNs
 	ProfileLanguage string   // Profile language (e.g., "en,ch")
 	ServiceCategory []string // Service category IDs
